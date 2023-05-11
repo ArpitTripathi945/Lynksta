@@ -63,18 +63,60 @@ class _AuthLandState extends State<AuthLand> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset("assets/google.png"),
+                    SizedBox(
+                        width: 24,
+                        height: 24,
+                        child: Image.asset("assets/google.png")),
+                    SizedBox(width: 20),
                     Text(
                       "Sign In with Google",
                       style: TextStyle(
                           fontFamily: GoogleFonts.roboto().fontFamily,
                           fontSize: 14,
+                          fontWeight: FontWeight.bold,
                           color: Colors.grey),
                     ),
                   ],
                 ),
               ),
             ),
+            SizedBox(height: 30),
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                height: 48,
+                width: 306,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Colors.black),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                        width: 24,
+                        height: 24,
+                        child: Image.asset("assets/apple.png")),
+                    SizedBox(width: 20),
+                    Text(
+                      "Sign In with Google",
+                      style: TextStyle(
+                          fontFamily: GoogleFonts.roboto().fontFamily,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 86,
+            ),
+            Text(
+              "Copyright 2023",
+              style: TextStyle(
+                  fontFamily: secondary, fontSize: 12, color: Colors.white),
+            )
           ],
         ),
       ),
