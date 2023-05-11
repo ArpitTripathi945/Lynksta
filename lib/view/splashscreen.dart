@@ -37,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
               Text(
                 "Copyright 2023",
                 style: TextStyle(
-                    fontFamily: sen, fontSize: 12, color: Colors.white),
+                    fontFamily: secondary, fontSize: 12, color: Colors.white),
               )
             ]),
           ),

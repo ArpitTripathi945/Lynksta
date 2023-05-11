@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lunksta/constants.dart';
+import 'package:lunksta/view/sign_in.dart';
+import 'package:lunksta/view/sign_up.dart';
+import 'package:lunksta/widgets/shadow_button.dart';
 
 class AuthLand extends StatefulWidget {
   const AuthLand({super.key});
@@ -21,27 +24,30 @@ class _AuthLandState extends State<AuthLand> {
             SizedBox(height: 30),
             Text(
               "Welcome to Lynksta",
-              style:
-                  TextStyle(color: Colors.white, fontFamily: sen, fontSize: 18),
+              style: TextStyle(
+                  color: Colors.white, fontFamily: secondary, fontSize: 18),
             ),
             SizedBox(height: 80),
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    //stops: [0.1, 0.5, 0.7, 0.9],
-                    colors: [gradient1, gradient2]),
-              ),
-              child: TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black),
-                  ),
-                ),
-              ),
+            ShadowButton(
+              height: 190,
+              width: 45,
+              text: "Login",
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => SignIn()));
+              },
             ),
+            SizedBox(height: 30),
+            ShadowButton(
+              height: 190,
+              width: 45,
+              text: "Signup",
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => SignUp()));
+              },
+            ),
+            SizedBox(height: 80),
           ],
         ),
       ),
