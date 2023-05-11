@@ -40,7 +40,7 @@ class ShadowButton extends StatelessWidget {
             ),
           ),
           style: ElevatedButton.styleFrom(
-              minimumSize: Size(height, width),
+              minimumSize: Size(width, height),
               backgroundColor: button,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0))),

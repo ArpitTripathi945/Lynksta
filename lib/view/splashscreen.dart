@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 1),
+        Duration(seconds: 3),
         () => Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (BuildContext context) => AuthLand())));
   }
@@ -30,9 +30,15 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Center(
             child: Column(children: [
               SizedBox(height: 200),
-              Image.asset("assets/lynksta.png"),
+              SizedBox(
+                  height: 120,
+                  width: 120,
+                  child: Image.asset("assets/lynksta.png")),
               SizedBox(height: 150),
-              Image.asset("assets/lynksta_title.png"),
+              SizedBox(
+                  height: 54,
+                  width: 194,
+                  child: Image.asset("assets/lynksta_title.png")),
               SizedBox(height: 220),
               Text(
                 "Copyright 2023",
