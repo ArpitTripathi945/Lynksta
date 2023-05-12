@@ -105,7 +105,7 @@ class _AuthLandState extends State<AuthLand> {
                               fontFamily: GoogleFonts.roboto().fontFamily,
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
-                              color: Colors.grey),
+                              color: Colors.white),
                         ),
                       ],
                     ),

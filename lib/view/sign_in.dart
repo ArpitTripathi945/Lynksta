@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lunksta/constants.dart';
+import 'package:lunksta/widgets/checkbox.dart';
 import 'package:lunksta/widgets/grad_button.dart';
 import 'package:lunksta/widgets/grad_text_field.dart';
 
@@ -11,6 +12,8 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  bool? isChecked = false;
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -49,24 +52,27 @@ class _SignInState extends State<SignIn> {
                       ),
                       SizedBox(height: 10),
                       GradTextField(),
-                      //           Container(height: 19,
-                      //   width: 19,
-                      //   decoration: BoxDecoration(
-                      //       gradient: LinearGradient(
-                      //         begin: Alignment.topLeft,
-                      //         end: Alignment(10, 3),
-                      //         colors: <Color>[
-                      //           Colors.white,
-                      //           Colors.grey,
-                      //   ],
-                      // )
-                      // ),
-                      //   child: Checkbox(value: false,),
-                      // ),
-                      SizedBox(height: 180),
+                      SizedBox(height: 43),
                     ],
                   ),
                 ),
+                Row(
+                  //mainAxisAlignment: MainAxisAlignment.start,
+                  //crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(width: 22),
+                    Check(),
+                    SizedBox(width: 10),
+                    Text(
+                      "Remember me",
+                      style: TextStyle(
+                          fontFamily: tertiary,
+                          fontSize: 13,
+                          color: Colors.white),
+                    )
+                  ],
+                ),
+                SizedBox(height: 133),
                 Center(
                   child: GradButton(text: "Sign In", onPressed: () {}),
                 )
