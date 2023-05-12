@@ -41,7 +41,7 @@ class ShadowButton extends StatelessWidget {
           ),
           style: ElevatedButton.styleFrom(
               minimumSize: Size(width, height),
-              backgroundColor: button,
+              backgroundColor: element,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0))),
         ));

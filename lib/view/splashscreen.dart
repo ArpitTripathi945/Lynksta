@@ -25,27 +25,29 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Material(
         color: bgcolor,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Center(
-            child: Column(children: [
-              SizedBox(height: 200),
-              SizedBox(
-                  height: 120,
-                  width: 120,
-                  child: Image.asset("assets/lynksta.png")),
-              SizedBox(height: 150),
-              SizedBox(
-                  height: 54,
-                  width: 194,
-                  child: Image.asset("assets/lynksta_title.png")),
-              SizedBox(height: 220),
-              Text(
-                "Copyright 2023",
-                style: TextStyle(
-                    fontFamily: secondary, fontSize: 12, color: Colors.white),
-              )
-            ]),
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(
+              child: Column(children: [
+                SizedBox(height: 172),
+                SizedBox(
+                    height: 120,
+                    width: 120,
+                    child: Image.asset("assets/lynksta.png")),
+                SizedBox(height: 150),
+                SizedBox(
+                    height: 54,
+                    width: 194,
+                    child: Image.asset("assets/lynksta_title.png")),
+                SizedBox(height: 220),
+                Text(
+                  "Copyright 2023",
+                  style: TextStyle(
+                      fontFamily: secondary, fontSize: 12, color: Colors.white),
+                )
+              ]),
+            ),
           ),
         ));
   }
