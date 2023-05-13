@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lunksta/constants.dart';
 import 'package:lunksta/view/sign_in.dart';
 import 'package:lunksta/view/sign_up.dart';
+import 'package:lunksta/view/signup_land.dart';
 import 'package:lunksta/widgets/shadow_button.dart';
 
 class AuthLand extends StatefulWidget {
@@ -50,7 +51,7 @@ class _AuthLandState extends State<AuthLand> {
                   text: "Signup",
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) => SignUp()));
+                        builder: (BuildContext context) => SignUpLand()));
                   },
                 ),
                 SizedBox(height: 80),

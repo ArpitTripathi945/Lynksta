@@ -57,8 +57,6 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
                 Row(
-                  //mainAxisAlignment: MainAxisAlignment.start,
-                  //crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(width: 22),
                     Check(),
