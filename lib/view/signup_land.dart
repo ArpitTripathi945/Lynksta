@@ -60,6 +60,5 @@ class _SignUpLandState extends State<SignUpLand> {
             ),
           ),
         ));
-    ;
   }
 }

@@ -25,7 +25,7 @@ class GradTextField extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.0),
-            borderSide: BorderSide(color: gradient2),
+            borderSide: BorderSide(color: gradient1),
           ),
           contentPadding: EdgeInsets.all(13.0),
         ),

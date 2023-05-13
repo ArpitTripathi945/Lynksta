@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lunksta/constants.dart';
+import 'package:lunksta/view/signup_password.dart';
 import 'package:lunksta/widgets/checkbox.dart';
 import 'package:lunksta/widgets/grad_button.dart';
 import 'package:lunksta/widgets/grad_text_field.dart';
@@ -53,7 +54,13 @@ class _SignUpState extends State<SignUp> {
                 ),
                 SizedBox(height: 75),
                 Center(
-                  child: GradButton(text: "Sign In", onPressed: () {}),
+                  child: GradButton(
+                      text: "Next",
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                SignUpPassword()));
+                      }),
                 )
               ],
             ),

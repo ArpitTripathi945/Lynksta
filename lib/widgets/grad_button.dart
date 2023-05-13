@@ -4,14 +4,14 @@ import 'package:lunksta/constants.dart';
 
 class GradButton extends StatelessWidget {
   final String text;
-  final VoidCallback onPressed;
+  final VoidCallback onTap;
 
-  const GradButton({super.key, required this.text, required this.onPressed});
+  const GradButton({super.key, required this.text, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         height: 48,
         width: 200,
