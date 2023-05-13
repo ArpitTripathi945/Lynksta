@@ -6,8 +6,8 @@ import 'package:google_fonts/google_fonts.dart';
 dynamic bgcolor = Color.fromARGB(255, 29, 29, 29);
 dynamic element = Color.fromARGB(255, 42, 42, 42);
 dynamic textcolor = Color.fromARGB(255, 49, 243, 162);
-dynamic gradient1 = const Color.fromARGB(255, 199, 46, 224);
-dynamic gradient2 = const Color.fromARGB(255, 49, 243, 62);
+dynamic gradient1 = const Color.fromARGB(255, 49, 243, 62);
+dynamic gradient2 = const Color.fromARGB(255, 199, 46, 224);
 
 //Fonts
 
@@ -23,7 +23,7 @@ dynamic textstyle = TextStyle(
     color: Colors.white);
 
 dynamic loginstyle =
-    TextStyle(fontFamily: primary, fontSize: 36, color: gradient2);
+    TextStyle(fontFamily: primary, fontSize: 36, color: gradient1);
 
 dynamic copyright =
     TextStyle(fontFamily: secondary, fontSize: 12, color: Colors.white);

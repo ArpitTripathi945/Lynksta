@@ -36,7 +36,7 @@ class ShadowButton extends StatelessWidget {
             style: TextStyle(
               fontFamily: secondary,
               color: textcolor,
-              fontSize: 14,
+              fontSize: 16,
             ),
           ),
           style: ElevatedButton.styleFrom(

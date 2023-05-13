@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lunksta/constants.dart';
+import 'package:lunksta/view/sign_up.dart';
 import 'package:lunksta/widgets/checkbox.dart';
 import 'package:lunksta/widgets/grad_button.dart';
 import 'package:lunksta/widgets/grad_text_field.dart';
@@ -33,15 +34,16 @@ class _SignUpLandState extends State<SignUpLand> {
                   style: TextStyle(
                       fontFamily: secondary, fontSize: 18, color: Colors.white),
                 ),
-
                 SizedBox(height: 190),
-
                 Center(
                   child: ShadowButton(
                       height: 48,
                       width: 260,
                       text: "DJ Account",
-                      onPressed: () {}),
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext context) => SignUp()));
+                      }),
                 ),
                 SizedBox(height: 48),
                 Center(
@@ -49,11 +51,11 @@ class _SignUpLandState extends State<SignUpLand> {
                       height: 48,
                       width: 260,
                       text: "User Account",
-                      onPressed: () {}),
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext context) => SignUp()));
+                      }),
                 )
-                // Center(
-                //   child: GradButton(text: "Sign In", onPressed: () {}),
-                // ),
               ],
             ),
           ),
