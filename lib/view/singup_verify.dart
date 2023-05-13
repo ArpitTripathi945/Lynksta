@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lunksta/constants.dart';
 import 'package:lunksta/view/sign_up.dart';
+import 'package:lunksta/view/signup_verified.dart';
 import 'package:lunksta/widgets/shadow_button.dart';
 
 class SignUpVerify extends StatefulWidget {
@@ -27,36 +28,52 @@ class _SignUpVerifyState extends State<SignUpVerify> {
                 ),
                 SizedBox(height: 22),
                 Text(
-                  "Choose the type of account",
+                  "Verify your email address",
                   style: TextStyle(
                       fontFamily: secondary, fontSize: 18, color: Colors.white),
                 ),
-                SizedBox(height: 190),
+                SizedBox(height: 80),
                 Center(
-                  child: ShadowButton(
-                      height: 48,
-                      width: 260,
-                      text: "DJ Account",
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (BuildContext context) => SignUp()));
-                      }),
-                ),
-                SizedBox(height: 48),
-                Center(
-                  child: ShadowButton(
-                      height: 48,
-                      width: 260,
-                      text: "User Account",
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (BuildContext context) => SignUp()));
-                      }),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                          width: 226,
+                          height: 291,
+                          child: Image.asset("assets/verify.png")),
+                      SizedBox(height: 62),
+                      Text(
+                        "Verification email has been sent",
+                        style: textstyle1,
+                      ),
+                      SizedBox(height: 12),
+                      Text("Check your inbox, or spam folder",
+                          style: textstyle2),
+                      SizedBox(height: 42),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                              width: 18,
+                              height: 18,
+                              child: Icon(Icons.refresh, color: gradient1)),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "Refresh",
+                            style: TextStyle(
+                                fontFamily: secondary,
+                                fontSize: 18,
+                                color: gradient1),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
           ),
         ));
-    ;
   }
 }

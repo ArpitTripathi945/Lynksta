@@ -28,25 +28,21 @@ class _SignUpState extends State<SignUp> {
                   style: loginstyle,
                 ),
                 SizedBox(height: 22),
-                Text(
-                  "Sign up using your email",
-                  style: TextStyle(
-                      fontFamily: secondary, fontSize: 18, color: Colors.white),
-                ),
+                Text("Sign up using your email", style: textstyle1),
                 SizedBox(height: 51),
                 Center(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("First Name", style: textstyle),
+                      Text("First Name", style: textstyle2),
                       SizedBox(height: 10),
                       GradTextField(),
                       SizedBox(height: 30),
-                      Text("Last Name", style: textstyle),
+                      Text("Last Name", style: textstyle2),
                       SizedBox(height: 10),
                       GradTextField(),
                       SizedBox(height: 30),
-                      Text("Email", style: textstyle),
+                      Text("Email", style: textstyle2),
                       SizedBox(height: 10),
                       GradTextField(),
                     ],

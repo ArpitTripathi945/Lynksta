@@ -17,7 +17,10 @@ dynamic tertiary = GoogleFonts.roboto().fontFamily;
 
 // Text styles
 
-dynamic textstyle = TextStyle(
+dynamic textstyle1 =
+    TextStyle(fontFamily: secondary, fontSize: 18, color: Colors.white);
+
+dynamic textstyle2 = TextStyle(
     fontFamily: GoogleFonts.roboto().fontFamily,
     fontSize: 12,
     color: Colors.white);

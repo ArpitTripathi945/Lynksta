@@ -27,21 +27,17 @@ class _SignUpPasswordState extends State<SignUpPassword> {
                   style: loginstyle,
                 ),
                 SizedBox(height: 22),
-                Text(
-                  "Enter a strong password",
-                  style: TextStyle(
-                      fontFamily: secondary, fontSize: 18, color: Colors.white),
-                ),
+                Text("Enter a strong password", style: textstyle1),
                 SizedBox(height: 51),
                 Center(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Password", style: textstyle),
+                      Text("Password", style: textstyle2),
                       SizedBox(height: 10),
                       GradTextField(),
                       SizedBox(height: 30),
-                      Text("Confirm Password", style: textstyle),
+                      Text("Confirm Password", style: textstyle2),
                       SizedBox(height: 10),
                       GradTextField(),
                     ],
