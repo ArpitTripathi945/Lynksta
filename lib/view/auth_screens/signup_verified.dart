@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lunksta/constants.dart';
+import 'package:lunksta/view/home_screens/navigation.dart';
 import 'package:lunksta/widgets/grad_button.dart';
 
 class SignUpVerified extends StatefulWidget {
@@ -46,7 +47,13 @@ class _SignUpVerifiedState extends State<SignUpVerified> {
                       SizedBox(height: 12),
                       Text("Continue to finish sign up", style: textstyle2),
                       SizedBox(height: 58),
-                      GradButton(text: "Next", onTap: () {})
+                      GradButton(
+                          text: "Next",
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    Navigation()));
+                          })
                     ],
                   ),
                 )

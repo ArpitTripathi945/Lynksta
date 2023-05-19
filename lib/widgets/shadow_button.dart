@@ -21,7 +21,7 @@ class ShadowButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(8.0),
           boxShadow: [
             BoxShadow(
-              color: Color.fromARGB(255, 199, 46, 224),
+              color: gradient2,
               //color: Color.fromARGB(80, 199, 46, 224),
               blurRadius: 2.0,
               spreadRadius: -1.0,
