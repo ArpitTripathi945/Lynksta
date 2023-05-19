@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lunksta/constants.dart';
-import 'package:lunksta/view/sign_in.dart';
-import 'package:lunksta/view/sign_up.dart';
-import 'package:lunksta/view/signup_land.dart';
+import 'package:lunksta/view/auth_screens/sign_in.dart';
+import 'package:lunksta/view/auth_screens/sign_up.dart';
 import 'package:lunksta/widgets/shadow_button.dart';
 
 class AuthLand extends StatefulWidget {
@@ -40,8 +39,7 @@ class _AuthLandState extends State<AuthLand> {
                   height: 48,
                   text: "Login",
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) => SignIn()));
+                    Navigator.of(context).push(_createRouteSignIn());
                   },
                 ),
                 SizedBox(height: 30),
@@ -50,8 +48,7 @@ class _AuthLandState extends State<AuthLand> {
                   height: 48,
                   text: "Signup",
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) => SignUpLand()));
+                    Navigator.of(context).push(_createRouteSignUp());
                   },
                 ),
                 SizedBox(height: 80),
@@ -124,6 +121,44 @@ class _AuthLandState extends State<AuthLand> {
           ),
         ),
       ),
+    );
+  }
+
+  Route _createRouteSignIn() {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => const SignIn(),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(0.0, 1.0);
+        const end = Offset.zero;
+        const curve = Curves.easeOut;
+
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
+        );
+      },
+    );
+  }
+
+  Route _createRouteSignUp() {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => const SignUp(),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(0.0, 1.0);
+        const end = Offset.zero;
+        const curve = Curves.ease;
+
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
+        );
+      },
     );
   }
 }

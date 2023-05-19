@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lunksta/constants.dart';
-import 'package:lunksta/view/auth_land.dart';
+import 'package:lunksta/view/auth_screens/auth_land.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -15,10 +15,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(
-        Duration(seconds: 3),
-        () => Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (BuildContext context) => AuthLand())));
+    Timer(Duration(seconds: 3),
+        () => Navigator.of(context).pushReplacement(_createRoute()));
   }
 
   @override
@@ -50,5 +48,25 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
         ));
+  }
+
+  // Animated transition between pages
+  Route _createRoute() {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => const AuthLand(),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(0.0, 1.0);
+        const end = Offset.zero;
+        const curve = Curves.ease;
+
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
+        );
+      },
+    );
   }
 }

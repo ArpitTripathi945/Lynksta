@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lunksta/constants.dart';
-import 'package:lunksta/view/signup_password.dart';
+import 'package:lunksta/view/auth_screens/signup_password.dart';
 import 'package:lunksta/widgets/checkbox.dart';
 import 'package:lunksta/widgets/grad_button.dart';
 import 'package:lunksta/widgets/grad_text_field.dart';

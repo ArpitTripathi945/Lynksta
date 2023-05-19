@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lunksta/constants.dart';
-import 'package:lunksta/view/sign_up.dart';
-import 'package:lunksta/view/signup_verified.dart';
 import 'package:lunksta/widgets/shadow_button.dart';
 
 class SignUpVerify extends StatefulWidget {

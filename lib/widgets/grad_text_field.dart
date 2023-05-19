@@ -8,10 +8,13 @@ class GradTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final darktheme = ThemeData();
+
     return SizedBox(
       width: 260,
       height: 48,
       child: TextFormField(
+        onTap: () {},
         textInputAction: TextInputAction.done,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         style:

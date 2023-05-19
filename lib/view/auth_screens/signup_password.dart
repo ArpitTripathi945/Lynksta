@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lunksta/constants.dart';
-import 'package:lunksta/view/singup_verify.dart';
+import 'package:lunksta/view/auth_screens/singup_verify.dart';
 import 'package:lunksta/widgets/grad_button.dart';
 import 'package:lunksta/widgets/grad_text_field.dart';
 
