@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lunksta/constants.dart';
+import 'package:lunksta/widgets/card_detailed.dart';
 import 'package:lunksta/widgets/card_story.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,8 +22,11 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   Row(
-                    children: [CardStory()],
-                  )
+                    children: [
+                      CardStory(),
+                    ],
+                  ),
+                  CardDetailed(),
                 ],
               )),
         ),

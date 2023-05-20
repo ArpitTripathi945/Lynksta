@@ -20,11 +20,15 @@ class CardStory extends StatelessWidget {
               fit: BoxFit.cover,
             ),
             Positioned(
-                bottom: 9,
+                bottom: 12,
                 right: 47,
                 child: CircleAvatar(
+                  backgroundColor: Colors.white,
                   maxRadius: 14,
-                  child: Icon(Icons.person),
+                  child: Icon(
+                    Icons.person,
+                    color: Colors.black,
+                  ),
                 ))
           ],
         ),
