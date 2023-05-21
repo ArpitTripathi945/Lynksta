@@ -5,8 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 dynamic bgcolor = Color.fromARGB(255, 29, 29, 29);
 dynamic element = Color.fromARGB(255, 42, 42, 42);
-dynamic textcolor = Color.fromARGB(255, 49, 243, 162);
-dynamic gradient1 = const Color.fromARGB(255, 49, 243, 62);
+
+dynamic gradient1 = const Color.fromARGB(255, 49, 243, 162);
 dynamic gradient2 = const Color.fromARGB(255, 199, 46, 224);
 dynamic btnshadow = const Color.fromARGB(150, 199, 46, 224);
 

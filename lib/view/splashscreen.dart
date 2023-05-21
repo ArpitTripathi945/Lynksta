@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     height: 54,
                     width: 194,
                     child: Image.asset("assets/lynksta_title.png")),
-                SizedBox(height: 220),
+                SizedBox(height: 210),
                 Text(
                   "Copyright 2023",
                   style: TextStyle(

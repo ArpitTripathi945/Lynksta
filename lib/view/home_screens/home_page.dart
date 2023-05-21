@@ -17,20 +17,23 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: bgcolor,
       body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image.asset(
-                    "assets/lynksta.png",
-                    height: 42,
-                    width: 42,
-                  ),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+          child: CustomScrollView(
+            slivers: [
+              SliverAppBar(
+                floating: true,
+                backgroundColor: bgcolor,
+                automaticallyImplyLeading: false,
+                actions: <Widget>[
                   Row(
                     children: [
+                      Image.asset(
+                        "assets/lynksta.png",
+                        height: 42,
+                        width: 42,
+                      ),
+                      SizedBox(width: 78),
                       GestureDetector(
                         onTap: () {},
                         child: Icon(
@@ -57,6 +60,7 @@ class _HomePageState extends State<HomePage> {
                           color: gradient1,
                         ),
                       ),
+                      SizedBox(width: 78),
                     ],
                   ),
                   GestureDetector(
@@ -67,54 +71,64 @@ class _HomePageState extends State<HomePage> {
                       color: gradient1,
                     ),
                   ),
+                  SizedBox(width: 25),
                 ],
               ),
-            ),
-            SizedBox(height: 30),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
-              child: SizedBox(
-                width: double.infinity,
-                height: 120,
-                child: GridView.builder(
-                  scrollDirection: Axis.horizontal,
-                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 250,
-                      childAspectRatio: 1.25,
-                      crossAxisSpacing: 30,
-                      mainAxisSpacing: 10),
-                  itemCount: 10,
-                  itemBuilder: (BuildContext context, int index) {
-                    return CardStory();
-                  },
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(30, 30, 0, 0),
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: 120,
+                    child: GridView.builder(
+                      scrollDirection: Axis.horizontal,
+                      gridDelegate:
+                          const SliverGridDelegateWithMaxCrossAxisExtent(
+                              maxCrossAxisExtent: 250,
+                              childAspectRatio: 1.25,
+                              crossAxisSpacing: 30,
+                              mainAxisSpacing: 10),
+                      itemCount: 10,
+                      itemBuilder: (BuildContext context, int index) {
+                        return CardStory();
+                      },
+                    ),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: 30),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ShadowButton(
-                      height: 48, width: 150, text: "Sort", onPressed: () {}),
-                  ShadowButton(
-                      height: 48, width: 150, text: "Filter", onPressed: () {})
-                ],
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ShadowButton(
+                          height: 48,
+                          width: 150,
+                          text: "Sort",
+                          onPressed: () {}),
+                      ShadowButton(
+                          height: 48,
+                          width: 150,
+                          text: "Filter",
+                          onPressed: () {}),
+                    ],
+                  ),
+                ),
               ),
-            ),
-            SizedBox(height: 38),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(33, 0, 33, 0),
-                child: ListView.builder(
-                    itemCount: 10,
-                    itemBuilder: (BuildContext context, int index) {
-                      return CardDetailed();
-                    }),
-              ),
-            ),
-          ],
+              SliverToBoxAdapter(child: SizedBox(height: 20)),
+              SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                childCount: 10,
+                (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.fromLTRB(35, 18, 35, 0),
+                    child: CardDetailed(),
+                  );
+                },
+              ))
+            ],
+          ),
         ),
       ),
     );

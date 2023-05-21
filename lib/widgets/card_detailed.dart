@@ -6,17 +6,15 @@ class CardDetailed extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: bgcolor,
-      clipBehavior: Clip.antiAliasWithSaveLayer,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+    return Container(
+      height: 142,
+      width: 302,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8.0),
+          image: DecorationImage(
+              image: AssetImage("assets/list1.png"), fit: BoxFit.cover)),
       child: Stack(
         children: [
-          Image.asset(
-            "assets/list1.png",
-            height: 142,
-            width: 302,
-          ),
           Positioned(
             bottom: 25,
             left: 14,

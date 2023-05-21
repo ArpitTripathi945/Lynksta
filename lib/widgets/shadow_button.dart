@@ -35,7 +35,7 @@ class ShadowButton extends StatelessWidget {
             text,
             style: TextStyle(
               fontFamily: secondary,
-              color: textcolor,
+              color: gradient1,
               fontSize: 16,
             ),
           ),
