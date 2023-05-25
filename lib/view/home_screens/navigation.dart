@@ -16,9 +16,9 @@ class _Navigation extends State<Navigation> {
   int currentIndex = 0;
   final List<Widget> screens = [
     HomePage(),
-    UserProfile(),
     SearchPage(),
-    MessagesPage()
+    MessagesPage(),
+    UserProfile(),
   ];
   final PageStorageBucket bucket = PageStorageBucket();
   Widget currentScreen = HomePage();
@@ -151,7 +151,7 @@ class _Navigation extends State<Navigation> {
                           minWidth: 80,
                           onPressed: () {
                             setState(() {
-                              currentScreen = MessagesPage();
+                              currentScreen = UserProfile();
                               currentIndex = 3;
                             });
                           },

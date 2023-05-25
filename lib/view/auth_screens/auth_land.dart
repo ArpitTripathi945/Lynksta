@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lunksta/constants.dart';
 import 'package:lunksta/view/auth_screens/sign_in.dart';
 import 'package:lunksta/view/auth_screens/sign_up.dart';
+import 'package:lunksta/view/home_screens/dj_profile.dart';
 import 'package:lunksta/widgets/shadow_button.dart';
 
 class AuthLand extends StatefulWidget {
@@ -53,7 +54,10 @@ class _AuthLandState extends State<AuthLand> {
                 ),
                 SizedBox(height: 80),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => DjProfile()));
+                  },
                   child: Container(
                     height: 48,
                     width: 306,
