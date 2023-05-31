@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lunksta/constants.dart';
+import 'package:lunksta/widgets/card_detailed.dart';
+import 'package:lunksta/widgets/card_story.dart';
+import 'package:lunksta/widgets/post.dart';
 import 'package:lunksta/widgets/shadow_button.dart';
 
 class DjProfile extends StatefulWidget {
@@ -12,37 +15,44 @@ class DjProfile extends StatefulWidget {
 class _DjProfileState extends State<DjProfile> {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: bgcolor,
-      child: SafeArea(
-          child: Padding(
-        padding: const EdgeInsets.fromLTRB(35, 10, 35, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Icon(
-                      Icons.arrow_back_ios,
-                      color: gradient2,
-                      size: 20,
-                    )),
-                SizedBox(width: 30),
-                Text("DJ Profile",
-                    style: TextStyle(
-                        fontFamily: secondary,
-                        fontSize: 22,
-                        color: gradient1,
-                        fontWeight: FontWeight.bold))
-              ],
-            ),
-            SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
+    return Scaffold(
+      backgroundColor: bgcolor,
+      body: SafeArea(
+          child: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            floating: true,
+            backgroundColor: bgcolor,
+            automaticallyImplyLeading: false,
+            actions: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: gradient2,
+                        size: 20,
+                      )),
+                  SizedBox(width: 30),
+                  Text("DJ Profile",
+                      style: TextStyle(
+                          fontFamily: secondary,
+                          fontSize: 22,
+                          color: gradient1,
+                          fontWeight: FontWeight.bold)),
+                  SizedBox(width: 190),
+                ],
+              )
+            ],
+          ),
+          SliverToBoxAdapter(child: SizedBox(height: 38)),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(47, 0, 0, 0),
               child: Row(
                 children: [
                   Column(
@@ -78,7 +88,7 @@ class _DjProfileState extends State<DjProfile> {
                       ),
                       SizedBox(height: 12),
                       Text(
-                        "Lorem ipsum dolor sit\n a met, consectetur adass",
+                        "Lorem ipsum dolor sit\na met, consectetur adass",
                         style: TextStyle(
                             color: Colors.white,
                             fontFamily: secondary,
@@ -89,18 +99,91 @@ class _DjProfileState extends State<DjProfile> {
                 ],
               ),
             ),
-            SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ShadowButton(
-                    height: 48, width: 142, text: "Lynk(?)", onPressed: () {}),
-                ShadowButton(
-                    height: 48, width: 142, text: "Book", onPressed: () {})
-              ],
+          ),
+          SliverToBoxAdapter(child: SizedBox(height: 40)),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(35, 0, 35, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  ShadowButton(
+                      height: 48,
+                      width: 142,
+                      text: "Lynk(?)",
+                      onPressed: () {}),
+                  ShadowButton(
+                      height: 48, width: 142, text: "Book", onPressed: () {})
+                ],
+              ),
             ),
-          ],
-        ),
+          ),
+          SliverToBoxAdapter(child: SizedBox(height: 36)),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(35, 20, 0, 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Events",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontFamily: secondary,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 15),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 92,
+                    child: GridView.builder(
+                      scrollDirection: Axis.horizontal,
+                      gridDelegate:
+                          const SliverGridDelegateWithMaxCrossAxisExtent(
+                              maxCrossAxisExtent: 250,
+                              childAspectRatio: 3 / 5,
+                              crossAxisSpacing: 30,
+                              mainAxisSpacing: 18),
+                      itemCount: 10,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          decoration: BoxDecoration(
+                              color: element,
+                              borderRadius: BorderRadius.circular(8.0)),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(child: SizedBox(height: 36)),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(35, 0, 0, 0),
+              child: Text(
+                "Posts",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontFamily: secondary,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(child: SizedBox(height: 20)),
+          SliverList(
+              delegate: SliverChildBuilderDelegate(
+            childCount: 10,
+            (context, index) {
+              return Padding(
+                  padding: const EdgeInsets.fromLTRB(35, 0, 35, 15),
+                  child: Post());
+            },
+          )),
+        ],
       )),
     );
   }
