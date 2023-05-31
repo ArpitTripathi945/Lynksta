@@ -3,7 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lunksta/constants.dart';
 import 'package:lunksta/view/auth_screens/sign_in.dart';
 import 'package:lunksta/view/auth_screens/sign_up.dart';
+import 'package:lunksta/view/auth_screens/signup_land.dart';
+import 'package:lunksta/view/auth_screens/signup_verified.dart';
 import 'package:lunksta/view/home_screens/dj_profile.dart';
+import 'package:lunksta/view/home_screens/search_result.dart';
 import 'package:lunksta/widgets/shadow_button.dart';
 
 class AuthLand extends StatefulWidget {
@@ -49,14 +52,14 @@ class _AuthLandState extends State<AuthLand> {
                   height: 48,
                   text: "Signup",
                   onPressed: () {
-                    Navigator.of(context).push(_createRouteSignUp());
+                    Navigator.of(context).push(_createRouteSignUpLand());
                   },
                 ),
                 SizedBox(height: 80),
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) => DjProfile()));
+                        builder: (BuildContext context) => SignUpVerified()));
                   },
                   child: Container(
                     height: 48,
@@ -86,7 +89,10 @@ class _AuthLandState extends State<AuthLand> {
                 ),
                 SizedBox(height: 30),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => SearchResult()));
+                  },
                   child: Container(
                     height: 48,
                     width: 306,
@@ -147,9 +153,10 @@ class _AuthLandState extends State<AuthLand> {
     );
   }
 
-  Route _createRouteSignUp() {
+  Route _createRouteSignUpLand() {
     return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => const SignUp(),
+      pageBuilder: (context, animation, secondaryAnimation) =>
+          const SignUpLand(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(0.0, 1.0);
         const end = Offset.zero;

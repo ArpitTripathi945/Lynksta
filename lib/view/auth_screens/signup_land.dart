@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lunksta/constants.dart';
 import 'package:lunksta/view/auth_screens/sign_up.dart';
 import 'package:lunksta/view/auth_screens/signup_verified.dart';
+import 'package:lunksta/view/home_screens/dj_profile.dart';
 import 'package:lunksta/widgets/checkbox.dart';
 import 'package:lunksta/widgets/grad_button.dart';
 import 'package:lunksta/widgets/grad_text_field.dart';
@@ -43,7 +44,7 @@ class _SignUpLandState extends State<SignUpLand> {
                       text: "DJ Account",
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (BuildContext context) => SignUp()));
+                            builder: (BuildContext context) => DjProfile()));
                       }),
                 ),
                 SizedBox(height: 48),
@@ -54,8 +55,7 @@ class _SignUpLandState extends State<SignUpLand> {
                       text: "User Account",
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                SignUpVerified()));
+                            builder: (BuildContext context) => SignUp()));
                       }),
                 )
               ],
