@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lunksta/constants.dart';
+import 'package:lunksta/view/home_screens/search/search_result.dart';
 import 'package:lunksta/widgets/shadow_button.dart';
 
 class SearchPage extends StatefulWidget {
@@ -33,10 +34,12 @@ class _SearchPageState extends State<SearchPage> {
               style: TextStyle(
                   color: Colors.white, fontSize: 18, fontFamily: secondary),
               decoration: InputDecoration(
-                suffixIcon: Icon(
-                  Icons.search,
-                  color: gradient2,
-                  size: 20,
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => SearchResult()));
+                  },
+                  icon: Icon(Icons.search, color: gradient2, size: 20),
                 ),
                 labelText: "Search anything",
                 labelStyle: TextStyle(

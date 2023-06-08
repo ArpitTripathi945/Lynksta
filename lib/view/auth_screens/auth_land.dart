@@ -5,8 +5,8 @@ import 'package:lunksta/view/auth_screens/sign_in.dart';
 import 'package:lunksta/view/auth_screens/sign_up.dart';
 import 'package:lunksta/view/auth_screens/signup_land.dart';
 import 'package:lunksta/view/auth_screens/signup_verified.dart';
-import 'package:lunksta/view/home_screens/dj_profile.dart';
-import 'package:lunksta/view/home_screens/search_result.dart';
+import 'package:lunksta/view/home_screens/profile/dj_profile.dart';
+import 'package:lunksta/view/home_screens/search/search_result.dart';
 import 'package:lunksta/widgets/shadow_button.dart';
 
 class AuthLand extends StatefulWidget {

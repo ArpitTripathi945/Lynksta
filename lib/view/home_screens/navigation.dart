@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lunksta/constants.dart';
 import 'package:lunksta/view/home_screens/home_page.dart';
-import 'package:lunksta/view/home_screens/messages_page.dart';
-import 'package:lunksta/view/home_screens/user_profile.dart';
-import 'package:lunksta/view/home_screens/search_page.dart';
+import 'package:lunksta/view/home_screens//chat/messages_page.dart';
+import 'package:lunksta/view/home_screens/profile/user_profile.dart';
+import 'package:lunksta/view/home_screens/search/search_page.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({super.key});
