@@ -37,14 +37,14 @@ class _DjProfileState extends State<DjProfile> {
                         color: gradient2,
                         size: 20,
                       )),
-                  SizedBox(width: 30),
+                  SizedBox(width: 20),
                   Text("DJ Profile",
                       style: TextStyle(
                           fontFamily: secondary,
                           fontSize: 22,
                           color: gradient1,
                           fontWeight: FontWeight.bold)),
-                  SizedBox(width: 190),
+                  SizedBox(width: 200),
                 ],
               )
             ],
@@ -88,7 +88,7 @@ class _DjProfileState extends State<DjProfile> {
                       ),
                       SizedBox(height: 12),
                       Text(
-                        "Lorem ipsum dolor sit\na met, consectetur adass",
+                        "Lorem ipsum dolor sit \na met, consectetur adass",
                         style: TextStyle(
                             color: Colors.white,
                             fontFamily: secondary,

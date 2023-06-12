@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:lunksta/constants.dart';
+import 'package:lunksta/view/home_screens/profile/dj_profile.dart';
 
 class CardStory extends StatelessWidget {
   const CardStory({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (BuildContext context) => DjProfile()));
+      },
       child: Card(
         color: bgcolor,
         clipBehavior: Clip.antiAlias,

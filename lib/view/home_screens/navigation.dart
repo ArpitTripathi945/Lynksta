@@ -25,6 +25,7 @@ class _Navigation extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: bgcolor,
       body: PageStorage(
         child: currentScreen,
